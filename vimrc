@@ -170,5 +170,7 @@ let g:cpp_experimental_template_highlight = 1
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 "display num of lines
-:set relativenumber
+set relativenumber
 set timeoutlen=1000 ttimeoutlen=0
+
+set t_ut=
