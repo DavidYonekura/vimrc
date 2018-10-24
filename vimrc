@@ -29,7 +29,8 @@ Plugin 'scrooloose/nerdtree.git'
 " enable CTRLP - Full path fuzzy file, buffer, mru, tag, 
 " etc, finder for Vim
 Plugin 'ctrlpvim/ctrlp.vim'
-
+" enable vimtex
+Plugin 'lervag/vimtex'
 
 " enable fzf
 set rtp+=~/.fzf
@@ -157,7 +158,13 @@ let g:cpp_class_decl_highlight = 1
 let c_no_curly_error=1
 let g:cpp_experimental_template_highlight = 1
 
+" autocomplete latex
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 
+let g:vimtex_complete_close_braces = 1
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
 " location list window, or close it when is has become empty.
