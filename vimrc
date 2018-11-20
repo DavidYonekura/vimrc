@@ -82,7 +82,7 @@ set ruler
 " turn syntax highlighting on
 syntax on                                                                                                     
 colorscheme molokai                                                                                           
-set termguicolors                                                                                             
+" set termguicolors                                                                                             
 
 " turn line numbers on
 "set number
@@ -181,3 +181,26 @@ set relativenumber
 set timeoutlen=1000 ttimeoutlen=0
 
 set t_ut=
+" firefox tab navigation
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+nnoremap J gT
+nnoremap K gt
+
+map q: <Nop>
+nnoremap Q <nop>
+
+
+" auto close brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
