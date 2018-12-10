@@ -5,7 +5,7 @@ silent !stty -ixon > /dev/null 2>/dev/null
 set nocompatible
 
 " setup Vundle (run :PluginInstall to install plugins)
-filetype off
+filetype plugin on
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -16,6 +16,8 @@ Plugin 'Valloric/YouCompleteMe'
 
 " plugin to enable better syntax highlight 
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'suan/vim-instant-markdown'
+
 
 " plugin to enable lightline
 Plugin 'itchyny/lightline.vim'
