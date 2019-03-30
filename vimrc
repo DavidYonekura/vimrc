@@ -18,6 +18,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'suan/vim-instant-markdown'
 
+Plugin 'jiangmiao/auto-pairs'
 
 " plugin to enable lightline
 Plugin 'itchyny/lightline.vim'
