@@ -86,11 +86,8 @@ syntax on
 colorscheme molokai                                                                                           
 " set termguicolors                                                                                             
 
-" turn line numbers on
-"set number
-
 " highlight matching braces
-set showmatch
+"set showmatch
 
 " enhanced tab completion on commands
 set wildmenu
@@ -179,7 +176,9 @@ let g:vimtex_complete_close_braces = 1
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 "display num of lines
+set tabpagemax=100
 set relativenumber
+set number
 set timeoutlen=1000 ttimeoutlen=0
 
 set t_ut=
@@ -196,13 +195,4 @@ nnoremap K gt
 
 map q: <Nop>
 nnoremap Q <nop>
-
-
-" auto close brackets
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+map <F5> <Esc>:w<CR>:!clear;python %<CR>
