@@ -16,7 +16,6 @@ Plugin 'Valloric/YouCompleteMe'
 
 " plugin to enable better syntax highlight 
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'suan/vim-instant-markdown'
 
 Plugin 'jiangmiao/auto-pairs'
 
