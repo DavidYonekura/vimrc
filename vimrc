@@ -33,6 +33,9 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'ctrlpvim/ctrlp.vim'
 " enable vimtex
 Plugin 'lervag/vimtex'
+Plugin 'xuhdev/vim-latex-live-preview'
+
+
 
 " enable fzf
 set rtp+=~/.fzf
@@ -56,9 +59,9 @@ filetype on
 set path=$PWD/**
 
 " set spell check
-"autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=pt
-"autocmd FileType gitcommit set spell spelllang=en
-"autocmd FileType txt setlocal spell spelllang=pt
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=pt
+autocmd FileType txt setlocal spell spelllang=pt
+autocmd FileType tex setlocal spell spelllang=pt
 " set spell spelllang=en
 
 " autocomplete words
@@ -161,7 +164,7 @@ let g:cpp_experimental_template_highlight = 1
 if !exists('g:ycm_semantic_triggers')
   let g:ycm_semantic_triggers = {}
 endif
-let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+" let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 
 let g:vimtex_complete_close_braces = 1
 
@@ -195,4 +198,9 @@ nnoremap K gt
 
 map q: <Nop>
 nnoremap Q <nop>
-map <F5> <Esc>:w<CR>:!clear;python %<CR>
+autocmd FileType python map <F5> <Esc>:w<CR>:!clear;python %<CR>
+
+" latex-preview configs
+let g:livepreview_previewer = 'zathura'
+let maplocalleader = "\\"
+
