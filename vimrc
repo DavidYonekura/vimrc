@@ -23,6 +23,10 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'itchyny/lightline.vim'
 set laststatus=2
 set noshowmode
+set ttymouse=xterm2
+set mouse=a
+
+
 
 " enable NERD tree - allows you to explore your filesystem 
 " and to open files and directories.
@@ -34,7 +38,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " enable vimtex
 Plugin 'lervag/vimtex'
 Plugin 'xuhdev/vim-latex-live-preview'
-
 
 
 " enable fzf
@@ -160,13 +163,6 @@ let g:cpp_class_decl_highlight = 1
 let c_no_curly_error=1
 let g:cpp_experimental_template_highlight = 1
 
-" autocomplete latex
-if !exists('g:ycm_semantic_triggers')
-  let g:ycm_semantic_triggers = {}
-endif
-" let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
-
-let g:vimtex_complete_close_braces = 1
 
 " Automatically open, but do not go to (if there are errors) the quickfix /
 " location list window, or close it when is has become empty.
@@ -204,3 +200,7 @@ autocmd FileType python map <F5> <Esc>:w<CR>:!clear;python %<CR>
 let g:livepreview_previewer = 'zathura'
 let maplocalleader = "\\"
 
+let g:vimtex_view_general_viewer = 'zathura'
+let g:AutoPairsShortcutBackInsert=''
+let g:AutoPairsShortcutJump=''
+let g:AutoPairsMoveCharacter=''
