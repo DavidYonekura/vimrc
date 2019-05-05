@@ -20,7 +20,8 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'jiangmiao/auto-pairs'
 
 " plugin to enable lightline
-Plugin 'itchyny/lightline.vim'
+" Plugin 'itchyny/lightline.vim'
+Plugin 'powerline/powerline.vim'
 set laststatus=2
 set noshowmode
 set ttymouse=xterm2
