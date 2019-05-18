@@ -21,7 +21,7 @@ Plugin 'jiangmiao/auto-pairs'
 
 " plugin to enable lightline
 " Plugin 'itchyny/lightline.vim'
-Plugin 'powerline/powerline.vim'
+let g:powerline_pycmd="py3"
 set laststatus=2
 set noshowmode
 set ttymouse=xterm2
