@@ -1,4 +1,4 @@
-" this is to receive CTRL-S and CTRL-Q
+" thi is to receive CTRL-S and CTRL-Q
 silent !stty -ixon > /dev/null 2>/dev/null
 
 " disable vi compatibility (emulation of old bugs)
@@ -135,6 +135,7 @@ let g:ctrlp_switch_buffer = 't'
 " MAPPINGS
 
 "nerd tree
+let g:NERDTreeWinPos='right'
 map <C-b> :NERDTreeToggle<CR>
 
 
@@ -196,6 +197,10 @@ nnoremap K gt
 map q: <Nop>
 nnoremap Q <nop>
 autocmd FileType python map <F5> <Esc>:w<CR>:!clear;python %<CR>
+
+set termwinsize="5*0"
+map <space>'   <ESC>:botright term ++rows=10<CR> <CR> clear<CR>
+
 
 " latex-preview configs
 let g:livepreview_previewer = 'zathura'
