@@ -17,6 +17,8 @@ Plugin 'Valloric/YouCompleteMe'
 " plugin to enable better syntax highlight 
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
+Plugin 'yggdroot/indentline'
+
 Plugin 'jiangmiao/auto-pairs'
 
 " plugin to enable lightline
@@ -29,6 +31,7 @@ set mouse=a
 
 
 
+
 " enable NERD tree - allows you to explore your filesystem 
 " and to open files and directories.
 Plugin 'scrooloose/nerdtree.git'
@@ -38,7 +41,6 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'ctrlpvim/ctrlp.vim'
 " enable vimtex
 Plugin 'lervag/vimtex'
-Plugin 'xuhdev/vim-latex-live-preview'
 
 
 " enable fzf
