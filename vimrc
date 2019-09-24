@@ -22,15 +22,12 @@ Plugin 'yggdroot/indentline'
 Plugin 'jiangmiao/auto-pairs'
 
 " plugin to enable lightline
-" Plugin 'itchyny/lightline.vim'
-let g:powerline_pycmd="py3"
+Plugin 'itchyny/lightline.vim'
 set laststatus=2
 set noshowmode
 set ttymouse=xterm2
+set term=screen-256color
 set mouse=a
-
-
-
 
 " enable NERD tree - allows you to explore your filesystem 
 " and to open files and directories.
@@ -57,6 +54,7 @@ Plugin 'jlanzarotta/bufexplorer'
 
 " end of Vundle initialization
 call vundle#end()
+
 filetype plugin indent on
 filetype on
 
@@ -93,10 +91,6 @@ set ruler
 " turn syntax highlighting on
 syntax on                                                                                                     
 colorscheme molokai                                                                                           
-" set termguicolors                                                                                             
-
-" highlight matching braces
-"set showmatch
 
 " enhanced tab completion on commands
 set wildmenu
@@ -167,24 +161,13 @@ let g:cpp_class_decl_highlight = 1
 let c_no_curly_error=1
 let g:cpp_experimental_template_highlight = 1
 
-
-" Automatically open, but do not go to (if there are errors) the quickfix /
-" location list window, or close it when is has become empty.
-"
-" Note: Must allow nesting of autocmds to enable any customizations for quickfix
-" buffers.
-" Note: Normally, :cwindow jumps to the quickfix window if the command opens it
-" (but not if it's already open). However, as part of the autocmd, this doesn't
-" seem to happen.
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-"display num of lines
 set tabpagemax=100
+"display num of lines
 set relativenumber
 set number
+
 set timeoutlen=1000 ttimeoutlen=0
 
-set t_ut=
 " firefox tab navigation
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
@@ -207,8 +190,13 @@ map <space>'   <ESC>:botright term ++rows=10<CR> <CR> clear<CR>
 " latex-preview configs
 let g:livepreview_previewer = 'zathura'
 let maplocalleader = "\\"
-
+let g:vimtex_compiler_latexmk = {
+            \ 'build_dir' : 'build',
+            \}
 let g:vimtex_view_general_viewer = 'zathura'
 let g:AutoPairsShortcutBackInsert=''
 let g:AutoPairsShortcutJump=''
 let g:AutoPairsMoveCharacter=''
+let g:tex_conceal = ""
+set conceallevel=0
+set clipboard=unnamed
