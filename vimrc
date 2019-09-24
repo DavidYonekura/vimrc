@@ -7,55 +7,42 @@ set nocompatible
 " setup Vundle (run :PluginInstall to install plugins)
 filetype plugin on
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
+call vundle#begin()
 " plugin to enable Vundle 
 Plugin 'VundleVim/Vundle.vim'
 " plugin to enable word completition 
 Plugin 'Valloric/YouCompleteMe'
-
-" plugin to enable better syntax highlight 
+" plugin to enable better cpp syntax highlight 
 Plugin 'octol/vim-cpp-enhanced-highlight'
-
+" plugin to enable better line indentation
 Plugin 'yggdroot/indentline'
-
+" plugin to enable auto closing brackets
 Plugin 'jiangmiao/auto-pairs'
-
+" plugins to enable snippets
 Plugin 'SirVer/ultisnips'
-
+Plugin 'honza/vim-snippets'
 " plugin to enable lightline
 Plugin 'itchyny/lightline.vim'
+" enable NERD tree - allows you to explore your filesystem 
+" and to open files and directories.
+Plugin 'scrooloose/nerdtree.git'
+" enable vimtex
+Plugin 'lervag/vimtex'
+" syntax checking plugin for Vim that runs files through external syntax
+" checkers and displays any resulting errors to the user.
+Plugin 'scrooloose/syntastic'
+" buffer explorer
+Plugin 'jlanzarotta/bufexplorer'
+"---------------------------------------------------------------------------------
+" end of Vundle initialization
+call vundle#end()
+
 set laststatus=2
 set noshowmode
 set ttymouse=xterm2
 set term=screen-256color
 set mouse=a
-
-" enable NERD tree - allows you to explore your filesystem 
-" and to open files and directories.
-Plugin 'scrooloose/nerdtree.git'
-
-" enable CTRLP - Full path fuzzy file, buffer, mru, tag, 
-" etc, finder for Vim
-Plugin 'ctrlpvim/ctrlp.vim'
-" enable vimtex
-Plugin 'lervag/vimtex'
-
-
-" enable fzf
-set rtp+=~/.fzf
-Plugin 'junegunn/fzf.vim'
-
-" syntax checking plugin for Vim that runs files through external syntax
-" checkers and displays any resulting errors to the user.
-Plugin 'scrooloose/syntastic'
-
-" buffer explorer
-Plugin 'jlanzarotta/bufexplorer'
-
-
-" end of Vundle initialization
-call vundle#end()
 
 filetype plugin indent on
 filetype on
@@ -119,18 +106,7 @@ set tags+=tags;                     " search tags automagically
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" exclude files and directories using Vim's wildignore and CtrlP's own g:ctrlp_custom_ignore
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-
-" CTRLP configuration
-let g:ctrlp_by_filename = 1
-let g:ctrlp_switch_buffer = 't'
-" MAPPINGS
 
 "nerd tree
 let g:NERDTreeWinPos='right'
@@ -140,28 +116,19 @@ map <C-b> :NERDTreeToggle<CR>
 " (F2, CTRL-S) Save file
 nmap <c-s> :w<CR>
 imap <c-s> <c-o><c-s>
-nmap <F2> :w<CR>
-imap <F2> <c-o><F2>
-
-" (CTRL-Q) close file
-nmap <c-q> :q<CR>
-imap <c-q> <c-o><c-q>
 
 " (F10) buffer explorer
 noremap <silent> <F10> <ESC>:BufExplorer<CR>
 "
 " (CTRL-O) open nerd tree
 nnoremap <C-o> <ESC>:NERDTreeToggle<CR>
-" default command to invoke CtrlP:
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
 
 " syntax highlight config
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
-let c_no_curly_error=1
 let g:cpp_experimental_template_highlight = 1
+let c_no_curly_error=1
 
 set tabpagemax=100
 "display num of lines
@@ -202,9 +169,10 @@ let g:AutoPairsShortcutBackInsert=''
 let g:AutoPairsShortcutJump=''
 let g:AutoPairsMoveCharacter=''
 let g:tex_conceal = ""
-set conceallevel=1
+set conceallevel=0
 set clipboard=unnamed
 
+" snippets config
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<F6>"
 let g:UltiSnipsJumpForwardTrigger="<F6>"
