@@ -21,6 +21,8 @@ Plugin 'yggdroot/indentline'
 
 Plugin 'jiangmiao/auto-pairs'
 
+Plugin 'SirVer/ultisnips'
+
 " plugin to enable lightline
 Plugin 'itchyny/lightline.vim'
 set laststatus=2
@@ -188,15 +190,23 @@ map <space>'   <ESC>:botright term ++rows=10<CR> <CR> clear<CR>
 
 
 " latex-preview configs
-let g:livepreview_previewer = 'zathura'
 let maplocalleader = "\\"
+let g:livepreview_previewer = 'zathura'
 let g:vimtex_compiler_latexmk = {
             \ 'build_dir' : 'build',
             \}
 let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_quickfix_mode=0
+
 let g:AutoPairsShortcutBackInsert=''
 let g:AutoPairsShortcutJump=''
 let g:AutoPairsMoveCharacter=''
 let g:tex_conceal = ""
-set conceallevel=0
+set conceallevel=1
 set clipboard=unnamed
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<F6>"
+let g:UltiSnipsJumpForwardTrigger="<F6>"
+let g:UltiSnipsJumpBackwardTrigger="<c-F6>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
